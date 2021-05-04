@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Movies</title>
+    <link rel="stylesheet"type="text/css" href="css/styles.css">
+    <script src="https://kit.fontawesome.com/6d4c9c6088.js" crossorigin="anonymous"></script>
+  </head>
+  <body>
+    <header>
+      <select id="movie-filters">
+        <option value="most-popular">Most Popular</option>
+        <option value="highest-rated">Highest Rated (Rated R)</option>
+        <option value="tom-cruise">Tom Cruise</option>
+        <option value="brad-pitt">Brad Pitt</option>
+        <option value="liam-neeson">Liam Neeson</option>
+      </select>
+      <form id="movie-search">
+        <input type="text" id="search" class="search" placeholder="Search">
+      </form>
+    </header>
+
+    <main id="main">
+    </main>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script type="text/javascript" src="js/movies.js"></script>
+  </body>
+</html>
