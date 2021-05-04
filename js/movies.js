@@ -7,7 +7,6 @@ const BRAD_PITT_API = 'https://api.themoviedb.org/3/discover/movie?with_people=2
 const LIAM_NEESON_API = 'https://api.themoviedb.org/3/discover/movie?certification_country=US&certification=R&sort_by=revenue.desc&with_cast=3896&api_key=0ca95ecb421de299a8e0377085b633e8'
 
 const searchMovie = $("#movie-search");
-// const searchMovie = document.getElementById('movie-search');
 const search = $("#search");
 const main = $("#main");
 
@@ -19,20 +18,16 @@ async function getMovies(url) {
   const res = await fetch(url)
   const data = await res.json()
 
-  // console.log(data.results);
   showMovies(data.results)
 }
 
 //Render movies to the page
 function showMovies(movies) {
   main.empty();
-  // main.innerHTML = "";
 
   movies.forEach((movie) => {
     const { title, poster_path, vote_average, overview } = movie
-    // console.log("i am in the function");
-    // console.log(movie);
-
+   
     const movieElement = document.createElement("div");
     movieElement.classList.add("movie");
     movieElement.innerHTML = `
@@ -65,7 +60,6 @@ searchMovie.submit(function (event) {
   event.preventDefault();
 
   const searchTerm = search.val();
-  // console.log(searchTerm);
 
   if(searchTerm && searchTerm != "") {
     getMovies(SEARCH_API + searchTerm);
@@ -84,8 +78,7 @@ $( "#movie-filters" ).change(function(event) {
 
 function showMoviesByFilter() {
   const filterSelected = document.getElementById("movie-filters").value;
-  // console.log(filterSelected);
-
+  
   if(filterSelected === "most-popular") {
     getMovies(MOVIES_API);
   } else if(filterSelected === "tom-cruise") {
@@ -96,18 +89,3 @@ function showMoviesByFilter() {
     getMovies(LIAM_NEESON_API);
   }
 }
-
-// searchMovie.submit(function (event) {
-//   event.preventDefault();
-//
-//   const searchTerm = search.val();
-//   console.log(searchTerm);
-//
-//   if(searchTerm && searchTerm != '') {
-//     getMovies(SEARCH_API + searchTerm);
-//
-//     search.val('');
-//   } else {
-//     window.location.reload();
-//   }
-// });
