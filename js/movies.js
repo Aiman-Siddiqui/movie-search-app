@@ -2,7 +2,6 @@
 const MOVIES_API = 'https://api.themoviedb.org/3/discover/movie?sort_by=popularity.desc&api_key=0ca95ecb421de299a8e0377085b633e8&page=1'
 const IMG_PATH = 'https://image.tmdb.org/t/p/w1280'
 const SEARCH_API = 'https://api.themoviedb.org/3/search/movie?api_key=0ca95ecb421de299a8e0377085b633e8&query="'
-const HIGHEST_RATED_API = 'https://api.themoviedb.org/3/discover/movie/?certification_country=US&certification=R&sort_by=vote_average.desc&api_key=0ca95ecb421de299a8e0377085b633e8'
 const TOM_CRUISE_API = 'https://api.themoviedb.org/3/discover/movie?with_genres=878&with_cast=500&sort_by=vote_average.desc&api_key=0ca95ecb421de299a8e0377085b633e8'
 const BRAD_PITT_API = 'https://api.themoviedb.org/3/discover/movie?with_people=287,819&sort_by=vote_average.desc&api_key=0ca95ecb421de299a8e0377085b633e8'
 const LIAM_NEESON_API = 'https://api.themoviedb.org/3/discover/movie?certification_country=US&certification=R&sort_by=revenue.desc&with_cast=3896&api_key=0ca95ecb421de299a8e0377085b633e8'
@@ -89,8 +88,6 @@ function showMoviesByFilter() {
 
   if(filterSelected === "most-popular") {
     getMovies(MOVIES_API);
-  } else if(filterSelected === "highest-rated") {
-    getMovies(HIGHEST_RATED_API)
   } else if(filterSelected === "tom-cruise") {
     getMovies(TOM_CRUISE_API);
   } else if(filterSelected === "brad-pitt") {
